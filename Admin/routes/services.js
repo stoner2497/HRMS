@@ -30,14 +30,19 @@ router.get("/dash", ensureAuthenticated, (req, res) => {
              .then(async pro => {
              await  Client.countDocuments({},async function (cli) {
                await  Pro.countDocuments({}, async p => {
-                  await Emp.countDocuments({}, function (err, c) {
-                     res.render("admin/dash", {
-                       count: c,
-                       emp: emp,
-                       leaves: leaves,
-                       pro: p,
-                       cli: cli
-                     });
+                  await Emp.countDocuments({}, async function (err, c) {
+                    await Rev.find({})
+                            .then(reviews => {
+                              res.render("admin/dash", {
+                                count: c,
+                                emp: emp,
+                                leaves: leaves,
+                                pro: p,
+                                cli: cli,
+                                reviews:reviews
+                              });
+                            })
+                     
                    });
                  });
                });

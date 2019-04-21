@@ -26,7 +26,7 @@ router.get("/leaves", ensureAuthenticated, (req, res) => {
 
 router.post("/leaves", ensureAuthenticated, (req, res) => {
   const leaves = new Leaves({
-    emp: req.emp.id,
+    emp: req.user.id,
     leaveType: req.body.leaveType,
     from: req.body.from,
     to: req.body.to,
@@ -38,7 +38,7 @@ router.post("/leaves", ensureAuthenticated, (req, res) => {
     .save()
     .then(leaves => {
       console.log(leaves);
-      res.redirect("emp/dashboard");
+      res.redirect("dashboard");
     })
     .catch(err => console.log(err));
 });
@@ -65,6 +65,7 @@ router.get("/reviews", ensureAuthenticated, (req, res) => {
 router.post("/reviews", ensureAuthenticated, (req, res) => {
   const comp = new Rev({
     emp: req.user.id,
+    name:req.user.firstname,
     title: req.body.title,
     issue: req.body.issue
   });
