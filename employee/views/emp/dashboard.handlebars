@@ -1,0 +1,88 @@
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 ">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button>
+        </div>
+    </div>
+
+    <canvas class="my-4 w-100" id="myChart" width="1000" height="380"></canvas>
+
+    <h2>Section title</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>leaveType</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each attend}}
+                <tr>
+                    <td>1</td>
+                    <td>{{leaveType}}</td>
+                    <td>{{from}}</td>
+                    <td>{{to}}</td>
+                    <td>{{Reason}}</td>
+                    {{#if status}}
+                    <td>available</td>
+                    {{else}}
+                    <td>unavailable</td>
+                    {{/if}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <hr style="color:black">
+    <div class="row">
+        <h2 class="text-center">Notice</h2>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 ">
+            {{#each note}}
+            <div class="card">
+                <div class="card-content content-info">
+
+                    <h4 class="card-title">
+                        <a href="#pablo">{{title}}</a>
+                    </h4>
+                    <div class="footer">
+                        <h4>{{description}}</h4>
+                        <br>
+                        <br>
+                        <h5>{{date}}</h5>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</main>

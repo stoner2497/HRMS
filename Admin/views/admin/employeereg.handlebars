@@ -1,0 +1,48 @@
+
+
+<h3 class="text-center">Register Employee</h3>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-content">
+                <form role="form" action="/addemployee" id="contact-form" method="post">
+                    <div class="form-group label-floating">
+                        <label class="control-label">first name</label>
+                        <input type="text" name="firstname" value="{{firstname}}" class="form-control">
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">last name</label>
+                        <input type="text" name="lastname" value="{{lastname}}" class="form-control">
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Email address</label>
+                        <input type="email" name="email" value="{{email}}" class="form-control" />
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Designation</label>
+                        <input type="text" name="Designation" value="{{Designation}}" class="form-control" />
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Age</label>
+                        <input type="number" name="age" value="{{age}}" class="form-control" />
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">salary</label>
+                        <input type="number" name="salary" value="{{salary}}" class="form-control" />
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">password</label>
+                        <input type="password" name="password" value="{{password}}" class="form-control" />
+                    </div>
+
+                    <div class="submit text-center">
+                        <input type="submit" class="btn btn-primary btn-raised btn-round" value="Register Employee" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

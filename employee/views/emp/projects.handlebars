@@ -1,0 +1,35 @@
+<hr>
+<h1 class="text-center">Projects</h1>
+<br>
+<br>
+<div class="row">
+    {{#each pro}}
+    <div class="col-md-3 col-md-offset-2 ">
+        <div class="card">
+            <div class="card-content content-info">
+                <h5 class="category-social">
+                    <label for="projectname" style="color:black">Title:</label>
+                    {{projectName}}
+                </h5>
+                <h4 class="card-title">
+                    <a href="#pablo">{{description}}</a>
+                </h4>
+                <div class="footer">
+                    <div class="author">
+                        <a href="#pablo">
+                            <label for="pricing" style="color:black">Pricing:</label>
+                            <span>{{Rate}}</span>
+                        </a>
+                    </div>
+                    <div class="stats">
+                        <label for="Leader" style="color:black">Leader:</label>
+                        <font size="2.5">{{projectLeader}}</font>
+                        <label for="" style="color:black">Priority:</label>
+                        <font size="2">{{priority}}</font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

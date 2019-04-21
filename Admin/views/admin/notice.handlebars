@@ -1,0 +1,29 @@
+<h3 class="text-center">Add Notice</h3>
+
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-content">
+                <form role="form" id="contact-form" method="post">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Title</label>
+                        <input type="text" name="title" value="{{title}}" class="form-control" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Description</label>
+                        <textarea name="description" value="{{description}}" class="form-control" id="" cols="10" rows="10"></textarea>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label">Date</label>
+                       <input type="date" name="date" value="{{date}}" id="" class="form-control">
+                    </div>
+                    <div class="submit text-center">
+                        <input type="submit" class="btn btn-primary btn-raised btn-round"  value="Add Notice" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<style>
+    input[type=date] ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+    input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+    input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+        color: transparent;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h4><small>Holidays List</small></h4>
+        <div class="table-responsive" style="background-color:white;">
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>title</th>
+                        <th>holiday Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each holi}}
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td>{{title}}</td>
+                        <td>{{holidayDate}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 ">
+        <div class="card">
+            <div class="card-heading">
+                <h3 class="text-center">Add Holidays</h3>
+            </div>
+            <br>
+            <div class="card-content">
+                <form role="form" id="contact-form" action="holidays" method="post">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Title</label>
+                        <input type="text" name="title" value="{{title}}" class="form-control" required>
+                    </div>
+                    <div class="form-group ">
+                        <input type="date" class="form-control" name="holidayDate" value="{{holidayDate}}" id="">
+                    </div>
+                    <div class="submit text-center">
+                        <input type="submit" class="btn btn-primary btn-raised btn-round" value="Add Holidays" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

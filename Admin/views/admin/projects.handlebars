@@ -1,0 +1,92 @@
+<style>
+    input[type=date] ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+    input[type=date]::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+    input[type=date]::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+        color: transparent;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-5 col-md-offset-3">
+        <h4><small>Clients List</small></h4>
+        <div class="table-responsive" style="background-color:white;">
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>Project Name</th>
+                        <th>Rate</th>
+                        <th>Priority</th>
+                        <th>Project Leader</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each pro}}
+                    <tr>
+                        <td class="text-center">1</td>
+                        <td>{{projectName}}</td>
+                        <td>{{Rate}}</td>
+                        <td>{{priority}}</td>
+                        <td>{{projectLeader}}</td>
+                        <td>{{description}}</td>
+                        <td class="td-actions text-right">
+                            {{!-- <button type="button" rel="tooltip" class="btn btn-success">
+                                <i class="material-icons">edit</i>
+                            </button> --}}
+                            <form action="projects/{{id}}?_method=DELETE" method="POST">
+                                <button type="submit" rel="tooltip" class="btn btn-danger">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </form>
+
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 ">
+        <div class="card">
+            <div class="card-heading">
+                <h3 class="text-center">Add Project</h3>
+            </div>
+            <br>
+            <div class="card-content">
+                <form role="form" id="contact-form" action="projects" method="post">
+                    <div class="form-group label-floating">
+                        <label class="control-label">Project Name</label>
+                        <input type="text" name="projectName" value="{{projectName}}" class="form-control" required>
+                    </div>
+                    <div class="form-group label-floating ">
+                        <label class="control-label">Rate</label>
+                        <input type="number" class="form-control" name="Rate" value="{{Rate}}" id="">
+                    </div>
+                    <div class="form-group  ">
+                        <label class="control-label">priority</label>
+                        <input type="text" class="form-control" name="priority" placeholder="eg:high, low" value="{{priority}}"
+                            id="">
+                    </div>
+                    <div class="form-group label-floating ">
+                        <label class="control-label">ProjectLeader</label>
+                        <input type="text" class="form-control" name="projectLeader" value="{{projectLeader}}" id="">
+                    </div>
+                    <div class="form-group label-floating ">
+                        <label class="control-label">Description</label>
+                        <textarea name="description" value="{{description}}" id="" cols="50" rows="05"></textarea>
+                    </div>
+                    <div class="submit text-center">
+                        <input type="submit" class="btn btn-primary btn-raised btn-round" value="Add Project" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
